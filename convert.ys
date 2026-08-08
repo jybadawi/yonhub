@@ -1,0 +1,23 @@
+~ convert — handy unit conversions (a YonHub library)
+~ install with:  yon install convert
+~ use with:      bring "convert"   then  convert.c_to_f(100)
+
+task c_to_f(c):
+    giveback c * 9 / 5 + 32
+end
+
+task f_to_c(f):
+    giveback (f - 32) * 5 / 9
+end
+
+task km_to_miles(km):
+    giveback km * 0.621371
+end
+
+task miles_to_km(mi):
+    giveback mi / 0.621371
+end
+
+task kg_to_lb(kg):
+    giveback kg * 2.20462
+end

@@ -1,0 +1,19 @@
+~ jokes - a little joke library for YonderScript (hosted on YonHub)
+~ install:  yon install jokes
+~ use:      bring "jokes"   then  say jokes.tell()
+
+task tell():
+    all = [
+        "Why do programmers prefer dark mode? Because light attracts bugs.",
+        "A SQL query walks into a bar, walks up to two tables and asks: can I join you?",
+        "Why did the developer go broke? Because he used up all his cache.",
+        "There are only 10 kinds of people: those who know binary and those who dont.",
+        "I would tell you a UDP joke, but you might not get it.",
+        "Why do Java developers wear glasses? Because they dont C sharp."
+    ]
+    giveback pick(all)
+end
+
+task count():
+    giveback 6
+end

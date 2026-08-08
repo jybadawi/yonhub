@@ -2,6 +2,8 @@
 
 **A registry of libraries for YonderScript.**
 
+### 👉 New to YonderScript? **[Read the full tutorial: LEARN.md](LEARN.md)**
+
 Install any library with one command:
 
 ```bash

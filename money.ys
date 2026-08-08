@@ -1,0 +1,16 @@
+~ money — format numbers as money and with thousands separators
+~ use:  bring "money"   then  say money.dollars(1234.5)
+
+bring "builtins"
+
+task dollars(n):
+    giveback "$" + builtins.format(num(n), ",.2f")
+end
+
+task commas(n):
+    giveback builtins.format(num(n), ",")
+end
+
+task percent(n):
+    giveback builtins.format(num(n), ".1f") + "%"
+end

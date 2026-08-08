@@ -1,0 +1,11 @@
+~ color — wrap text in terminal colors (ANSI)
+~ use:  bring "color"   then  say color.green("success!")
+
+task red(s):     giveback "\e[31m" + s + "\e[0m" end
+task green(s):   giveback "\e[32m" + s + "\e[0m" end
+task yellow(s):  giveback "\e[33m" + s + "\e[0m" end
+task blue(s):    giveback "\e[34m" + s + "\e[0m" end
+task magenta(s): giveback "\e[35m" + s + "\e[0m" end
+task cyan(s):    giveback "\e[36m" + s + "\e[0m" end
+task bold(s):    giveback "\e[1m" + s + "\e[0m" end
+task dim(s):     giveback "\e[2m" + s + "\e[0m" end

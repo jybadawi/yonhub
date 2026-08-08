@@ -1,0 +1,59 @@
+~ mathx — extra math helpers
+~ use:  bring "mathx"   then  mathx.isprime(97)
+
+bring "math"
+
+task sqrt(n):
+    giveback math.sqrt(n)
+end
+
+task pi():
+    giveback math.pi
+end
+
+task factorial(n):
+    result = 1
+    foreach i in upto(2, n + 1):
+        result = result * i
+    end
+    giveback result
+end
+
+task gcd(a, b):
+    whilst b != 0:
+        temp = b
+        b = a % b
+        a = temp
+    end
+    giveback a
+end
+
+task lcm(a, b):
+    giveback a * b / gcd(a, b)
+end
+
+task isprime(n):
+    when n < 2:
+        giveback no
+    end
+    i = 2
+    whilst i * i <= n:
+        when n % i == 0:
+            giveback no
+        end
+        i = i + 1
+    end
+    giveback yes
+end
+
+task average(nums):
+    giveback sum(nums) / len(nums)
+end
+
+task clamp(x, lo, hi):
+    giveback lo when x < lo otherwise (hi when x > hi otherwise x)
+end
+
+task sign(x):
+    giveback -1 when x < 0 otherwise (1 when x > 0 otherwise 0)
+end

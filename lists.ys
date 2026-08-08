@@ -1,0 +1,57 @@
+~ lists — list helpers, including map/filter/reduce with lambdas
+~ use:  bring "lists"   then  lists.map([1,2,3], fn(x) => x * 2)
+
+task map(items, f):
+    out = []
+    foreach x in items:
+        push(out, f(x))
+    end
+    giveback out
+end
+
+task filter(items, f):
+    out = []
+    foreach x in items:
+        when f(x):
+            push(out, x)
+        end
+    end
+    giveback out
+end
+
+task reduce(items, f, start):
+    acc = start
+    foreach x in items:
+        acc = f(acc, x)
+    end
+    giveback acc
+end
+
+task first(items):
+    giveback items[0]
+end
+
+task last(items):
+    giveback items[len(items) - 1]
+end
+
+task reverse(items):
+    out = []
+    foreach x in items:
+        out = [x] + out
+    end
+    giveback out
+end
+
+task sort(items):
+    bring "builtins"
+    giveback builtins.sorted(items)
+end
+
+task total(items):
+    giveback sum(items)
+end
+
+task contains(items, x):
+    giveback has(items, x)
+end

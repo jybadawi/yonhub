@@ -1,0 +1,53 @@
+~ strings — handy text helpers
+~ use:  bring "strings"   then  strings.title("hello world")
+
+task capitalize(s):
+    when len(s) == 0:
+        giveback s
+    end
+    giveback upper(s[0]) + lower(s[1:])
+end
+
+task title(s):
+    out = []
+    foreach word in split(s, " "):
+        push(out, capitalize(word))
+    end
+    giveback join(out, " ")
+end
+
+task reverse(s):
+    out = ""
+    foreach ch in s:
+        out = ch + out
+    end
+    giveback out
+end
+
+task repeat(s, n):
+    out = ""
+    foreach i in upto(n):
+        out = out + s
+    end
+    giveback out
+end
+
+task count(s, part):
+    giveback len(split(s, part)) - 1
+end
+
+task padleft(s, width, ch = " "):
+    out = s
+    whilst len(out) < width:
+        out = ch + out
+    end
+    giveback out
+end
+
+task padright(s, width, ch = " "):
+    out = s
+    whilst len(out) < width:
+        out = out + ch
+    end
+    giveback out
+end

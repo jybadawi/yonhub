@@ -1,0 +1,21 @@
+~ validate — simple validators (uses regex under the hood)
+~ use:  bring "validate"   then  say validate.is_email("a@b.com")
+
+bring "re"
+
+task is_email(s):
+    giveback re.match("^[^@ ]+@[^@ ]+[.][^@ ]+$", s) != nothing
+end
+
+task is_number(s):
+    giveback re.match("^-?[0-9]+([.][0-9]+)?$", s) != nothing
+end
+
+task is_phone(s):
+    digits = re.sub("[^0-9]", "", s)
+    giveback len(digits) >= 7
+end
+
+task only_digits(s):
+    giveback re.sub("[^0-9]", "", s)
+end

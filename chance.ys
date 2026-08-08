@@ -1,0 +1,27 @@
+~ chance — randomness helpers
+~ use:  bring "chance"   then  say chance.dice()
+
+task dice():
+    giveback roll(1, 6)
+end
+
+task coin():
+    giveback "heads" when roll(0, 1) == 0 otherwise "tails"
+end
+
+task between(lo, hi):
+    giveback roll(lo, hi)
+end
+
+task choose(items):
+    giveback pick(items)
+end
+
+task shuffle(items):
+    bring "random"
+    giveback random.sample(items, len(items))
+end
+
+task chance(percent):
+    giveback roll(1, 100) <= percent
+end

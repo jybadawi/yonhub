@@ -1,0 +1,29 @@
+~ dates — date and time helpers
+~ use:  bring "dates"   then  say dates.today()
+
+bring "datetime"
+
+task today():
+    giveback text(datetime.date.today())
+end
+
+task now():
+    giveback datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+end
+
+task year():
+    giveback datetime.date.today().year
+end
+
+task month():
+    giveback datetime.date.today().month
+end
+
+task day():
+    giveback datetime.date.today().day
+end
+
+task weekday():
+    names = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
+    giveback names[datetime.date.today().weekday()]
+end
